@@ -14,4 +14,8 @@ class Boat < ActiveRecord::Base
   def self.ship
     all.where("length >= '20'")
   end
+
+  def self.last_three_alphabetically
+    all.order(:name).reverse_order.limit(3)
+  end
 end
