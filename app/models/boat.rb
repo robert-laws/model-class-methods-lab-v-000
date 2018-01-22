@@ -20,6 +20,6 @@ class Boat < ActiveRecord::Base
   end
 
   def self.without_a_captain
-    Captain.all.boats
+    all.where("captain_id > '0'")
   end
 end
