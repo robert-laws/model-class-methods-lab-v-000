@@ -18,4 +18,8 @@ class Boat < ActiveRecord::Base
   def self.last_three_alphabetically
     all.order(:name).reverse_order.limit(3)
   end
+
+  def self.without_a_captain
+    all.where("captain_id < '1'")
+  end
 end
