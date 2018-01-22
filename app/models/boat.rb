@@ -10,4 +10,8 @@ class Boat < ActiveRecord::Base
   def self.dinghy
     all.where("length < '20'")
   end
+
+  def self.ship
+    all.where("length >= '20'")
+  end
 end
